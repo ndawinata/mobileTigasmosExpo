@@ -95,17 +95,16 @@ const styles = StyleSheet.create({
     },
     container3:{
         alignItems:'center', 
-        flex:1
+        flex:1,
+        justifyContent:'center',
     },
     text:{
         color:'#fff',
-        fontFamily:'roboto',
         fontSize:18,
         fontWeight:'bold',
     },
     text1:{
         color:'#fff',
-        fontFamily:'roboto',
         fontSize:12
     },
     text2:{

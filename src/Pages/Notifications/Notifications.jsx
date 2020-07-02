@@ -5,7 +5,6 @@ import SafeAreaView from 'react-native-safe-area-view';
 import { ITsunami, BGUtama } from '../../Assets';
 import { GlobalConsumer } from '../../Component/Context/Context';
 import { ScrollView } from 'react-native-gesture-handler';
-import data from './data.json';
 
 const HandleData = (props) =>{
     return(

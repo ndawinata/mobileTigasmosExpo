@@ -3,7 +3,7 @@ import { Dimensions, ImageBackground, ScrollView, StyleSheet, Text, View } from 
 import SafeAreaView from 'react-native-safe-area-view';
 import { BGAbout, ILogo, IMask1, IMask2 } from '../../Assets';
 import artikel from '../../Assets/Article/Article.json';
-// import { GlobalConsumer } from '../../Component/Context/Context';
+import { GlobalConsumer } from '../../Component/Context/Context';
 import montserratbold from '../../Assets/fonts/montserratbold.ttf';
 import montserratregular from '../../Assets/fonts/montserratregular.ttf';
 import segoesc from '../../Assets/fonts/segoesc.ttf';
@@ -88,6 +88,4 @@ const styles = StyleSheet.create({
     }
 })
 
-// export default GlobalConsumer(About)
-export default About
-
+export default GlobalConsumer(About)
