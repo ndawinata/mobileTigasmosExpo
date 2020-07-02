@@ -1,0 +1,3 @@
+{
+    "about":"Tigasmos adalah Aplikasi Mobile (Android & iOS) yang digunakan untuk mengamati pasang & surut air laut secara realtime untuk mengkonfirmasi kedatangan tsunami, menggunakan sensor tekanan & ultrasonik yang dikonversi menjadi ketinggian pasang surut air laut dalam satuan meter. Aplikasi ini dibangun menggunakan Framework Javascript yaitu React Native. Aplikasi ini juga memberikan beberapa informasi cuaca sesuai lokasi pengguna."
+}

@@ -1,21 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+// import { StatusBar } from 'expo-status-bar';
+import React, { useEffect, useState } from 'react';
+import Splash from './src/Pages/SplashScreen/Splash';
+import About from './src/Pages/About/About';
+// import GlobalProvider from './src/Component/Context/Context';
+// import { About } from './src/Pages';
+// import { Splash, About } from './src/Pages';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+const App = () => {
+  const [splash, setsplash] = useState(true)
+
+  useEffect(()=>{
+    setTimeout(()=>{
+      setsplash(false)
+    },3000)
+  },[])
+
+  return(<About/>)
+  // if(splash){
+  //   return(<Splash/>)
+  // }else{
+  //   return(<Splash/>)
+  // }
+  
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+// export default GlobalProvider(App);
+export default App;
