@@ -22,7 +22,7 @@ class Weather extends Component {
                     options={{ 
                     title: 'Weather',
                     headerTitle:'Weather',
-                    headerTitleStyle:{fontWeight:"bold",fontFamily:'montserrat', letterSpacing:3},
+                    headerTitleStyle:{fontWeight:"bold", letterSpacing:3},
                     headerTitleAlign:'center', 
                     }}
                 />

@@ -2,8 +2,12 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { StackAbout, StackHome, StackNotif, StackSites, StackWeather } from '../..';
 import { GlobalConsumer } from '../../Context/Context';
+import About from '../StackNav/About';
+import Home from '../StackNav/Home';
+import Notifications from '../StackNav/Notifications';
+import Sites from '../StackNav/Sites';
+import Weather from '../StackNav/Weather';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -47,7 +51,7 @@ class TabNav extends Component {
             >
                 <Tab.Screen
                 name="Home"
-                component={StackHome}
+                component={Home}
                 listeners={()=>({
                     tabPress:this.props.dispatch({type:'home_color'})
                 })}
@@ -61,9 +65,9 @@ class TabNav extends Component {
                     },
                 }}
                 />
-                {/* <Tab.Screen
+                <Tab.Screen
                 name="Sites"
-                component={StackSites}
+                component={Sites}
                 listeners={()=>({
                     tabPress:this.props.dispatch({type:'sites_color'})
                         
@@ -77,10 +81,10 @@ class TabNav extends Component {
                     return <Icon name={iconName} size={26} color={color} />;
                     },
                 }}
-                /> */}
+                />
                 <Tab.Screen
                 name="Notification"
-                component={StackNotif}
+                component={Notifications}
                 listeners={()=>({
                     tabPress:this.props.dispatch({type:'notif_color'})
                 })}
@@ -96,7 +100,7 @@ class TabNav extends Component {
                 />
                 <Tab.Screen
                 name="Weather"
-                component={StackWeather}
+                component={Weather}
                 listeners={()=>({
                     tabPress:this.props.dispatch({type:'weather_color'})
                 })}
@@ -112,7 +116,7 @@ class TabNav extends Component {
                 />
                 <Tab.Screen
                 name="About"
-                component={StackAbout}
+                component={About}
                 listeners={()=>({
                     tabPress:this.props.dispatch({type:'about_color'})
                 })}

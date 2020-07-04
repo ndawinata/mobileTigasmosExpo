@@ -7,7 +7,7 @@ import montserratbold from '../../Assets/fonts/montserratbold.ttf';
 import segoesc from '../../Assets/fonts/segoesc.ttf';
 
 const windowWidth = Dimensions.get('window').width;
-const Splash = () => {
+const SplashScr = () => {
     let [fontsLoaded] = useFonts({
         montserratbold,
         segoesc,
@@ -56,4 +56,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default Splash
+export default SplashScr

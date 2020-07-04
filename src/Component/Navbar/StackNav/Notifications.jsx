@@ -22,7 +22,7 @@ class Notifications extends Component {
                     options={{ 
                     title: 'Notification',
                     headerTitle:'Notification',
-                    headerTitleStyle:{fontWeight:"bold",fontFamily:'montserrat', letterSpacing:3},
+                    headerTitleStyle:{fontWeight:"bold", letterSpacing:3},
                     headerTitleAlign:'center',
                     }}
                 />

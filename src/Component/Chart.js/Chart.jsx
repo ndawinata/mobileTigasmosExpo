@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Text, View, Dimensions, StyleSheet } from 'react-native'
 import { LineChart } from "react-native-chart-kit";
-import { GlobalConsumer } from '../Context/Context';
+// import { GlobalConsumer } from '../Context/Context';
 
 class Chart extends Component {        
     render() {

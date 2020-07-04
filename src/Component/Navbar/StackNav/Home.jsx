@@ -23,7 +23,7 @@ class Home extends Component {
                     title: 'My home',
                     // headerTitle:'TIGASMOS',
                     headerTitle:'TIGASMOS',
-                    headerTitleStyle:{fontWeight:"bold",fontFamily:'montserrat', letterSpacing:3,},
+                    headerTitleStyle:{fontWeight:"bold", letterSpacing:3,},
                     headerTitleAlign:'center',
                     headerRightContainerStyle:{marginHorizontal:20},
                     // cardOverlayEnabled:false

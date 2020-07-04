@@ -10,7 +10,7 @@ const key = '59f2ab33ebb2defe6a1d5e6f8d546b42'
 const url = `http://api.weatherstack.com/current?access_key=${key}&query=`
 
 const RootContext = createContext()
-
+var io = socketIOClient("http://tigasmos-stmkg.my.id:5000")
 //Provider
 const Provider = RootContext.Provider
 const GlobalProvider = (Children) => {
@@ -146,22 +146,22 @@ const GlobalProvider = (Children) => {
 
                 Axios.get(`http://tigasmos-stmkg.my.id:5000/api/${this.state.siteTabel}`)
                         .then((val)=>{
-                            // get data to CSV Data | Start ------
-                            const jsonData = val.data.datas
-                            const csvRows = []
-                            const header = ["date","pasut_sensor_ultrasonik","pasut_sensor_tekanan"]
-                            csvRows.push(header.join(','))
-                            for(const row of jsonData){
-                                const val = header.map(header=>{
-                                    const escape = (''+row[header]).replace(/"/g, '\\"')
-                                    return row[header]
-                                })
-                                csvRows.push(val.join(','))
-                            }
-                            const csv = csvRows.join('\n')
-                            this.setState({...this.state, csvData:csv})
+                            // // get data to CSV Data | Start ------
+                            // const jsonData = val.data.datas
+                            // const csvRows = []
+                            // const header = ["date","pasut_sensor_ultrasonik","pasut_sensor_tekanan"]
+                            // csvRows.push(header.join(','))
+                            // for(const row of jsonData){
+                            //     const val = header.map(header=>{
+                            //         const escape = (''+row[header]).replace(/"/g, '\\"')
+                            //         return row[header]
+                            //     })
+                            //     csvRows.push(val.join(','))
+                            // }
+                            // const csv = csvRows.join('\n')
+                            // this.setState({...this.state, csvData:csv})
 
-                            // get data to CSV Data | End ------
+                            // // get data to CSV Data | End ------
 
                             // get data to table Data | Start ------
                             val.data.datas.sort(function(a, b) {
@@ -178,25 +178,25 @@ const GlobalProvider = (Children) => {
                             
                             // get data to table Data | End ------
                         })
-                        .then((data)=>{
-                            const jsonData = data.data.datas
-                            const csvRows = []
-                            // get header
-                            const header = ["date","pasut_sensor_ultrasonik","pasut_sensor_tekanan"]
-                            // const header = Object.keys(jsonData[0])
-                            csvRows.push(header.join(','))
+                        // .then((data)=>{
+                        //     const jsonData = data.data.datas
+                        //     const csvRows = []
+                        //     // get header
+                        //     const header = ["date","pasut_sensor_ultrasonik","pasut_sensor_tekanan"]
+                        //     // const header = Object.keys(jsonData[0])
+                        //     csvRows.push(header.join(','))
                 
-                            // loop over the rows
-                            for(const row of jsonData){
-                                const val = header.map(header=>{
-                                    const escape = (''+row[header]).replace(/"/g, '\\"')
-                                    return row[header]
-                                })
-                                csvRows.push(val.join(','))
-                            }
-                            const csv = csvRows.join('\n')
-                            this.setState({...this.state, csvData:csv})
-                        }); 
+                        //     // loop over the rows
+                        //     for(const row of jsonData){
+                        //         const val = header.map(header=>{
+                        //             const escape = (''+row[header]).replace(/"/g, '\\"')
+                        //             return row[header]
+                        //         })
+                        //         csvRows.push(val.join(','))
+                        //     }
+                        //     const csv = csvRows.join('\n')
+                        //     this.setState({...this.state, csvData:csv})
+                        // }); 
                 Axios.get(`http://tigasmos-stmkg.my.id:5000/api/lokasi`)
                     .then((val)=>{
                         let data = val.data.datas
@@ -247,7 +247,7 @@ const GlobalProvider = (Children) => {
                         })
                     })
                     
-                let io = socketIOClient("http://tigasmos-stmkg.my.id:5000")
+                
                 io.on("site-1", (data) => {
                     this.state.site1.push(data)
                     this.setState({...this.state, site1:this.state.site1})

@@ -32,7 +32,6 @@ class Home extends Component {
             return (
                 <ImageBackground source={BGUtama} style={{flex:1}}>
                     <ScrollView showsVerticalScrollIndicator={false}>
-                            {/* <CuacaHome/> */}
                             <CuacaHome />
                             <View style={styles.shadow} />
                             <View style={styles.container1}>

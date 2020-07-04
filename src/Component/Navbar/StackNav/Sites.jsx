@@ -1,8 +1,8 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import React, { Component } from 'react';
-// import SitesPage from '../../../Pages/Sites/Sites';
-// import TabelPage from '../../../Pages/TabelPage/TabelPage';
-import HomePage from '../../../Pages/Home/Home';
+import SitesPage from '../../../Pages/Sites/Sites';
+import TabelPage from '../../../Pages/TabelPage/TabelPage';
+// import HomePage from '../../../Pages/Home/Home';
 
 const SitesStack = createStackNavigator();
 
@@ -20,21 +20,21 @@ class Sites extends Component {
             }}>
                 <SitesStack.Screen
                     name="Sites"
-                    component={HomePage}
+                    component={SitesPage}
                     options={{ 
                     title: 'Sites',
                     headerTitle:'Sites',
-                    headerTitleStyle:{fontWeight:"bold",fontFamily:'montserrat', letterSpacing:3},
+                    headerTitleStyle:{fontWeight:"bold", letterSpacing:3},
                     headerTitleAlign:'center', 
                     }}
                 />
                 <SitesStack.Screen
                     name="Tabel"
-                    component={HomePage}
+                    component={TabelPage}
                     options={{ 
                     title: 'Tide Gauge Data',
                     headerTitle:'Tide Gauge Data',
-                    headerTitleStyle:{fontWeight:"bold",fontFamily:'montserrat', letterSpacing:2},
+                    headerTitleStyle:{fontWeight:"bold", letterSpacing:2},
                     headerTitleAlign:'center', 
                     }}
                 />
