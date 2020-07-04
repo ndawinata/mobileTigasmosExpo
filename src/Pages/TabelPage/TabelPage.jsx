@@ -65,11 +65,11 @@ class TabelPage extends Component {
                             <Picker.Item label="Site 2" value="site2" />
                             <Picker.Item label="Site 3" value="site3" />
                         </Picker>
-                        <Button
+                        {/* <Button
                             title="Download"
                             type="outline"
                             onPress={c=>this.handleDownload(this.props.state.csvData,this.props.state.siteTabel)}
-                            />
+                            /> */}
                     </View>
                     <ScrollView horizontal={true} >
                         <View>

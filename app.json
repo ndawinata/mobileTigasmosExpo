@@ -4,12 +4,7 @@
     "slug": "mobileTigasmosExpo",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
+    "icon": "./assets/appstore.png",
     "packagerOpts": {
       "config": "metro.config.js",
       "sourceExts": [
@@ -33,10 +28,18 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "bundleIdentifier": "com.stmkg.tigasmos",
+      "supportsTablet": true,
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "com.stmkg.tigasmos",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "ios",
+    "githubUrl": "https://github.com/ndawinata/tigasmosAppIOS.git"
   }
 }

@@ -174,7 +174,8 @@ const GlobalProvider = (Children) => {
                             });
                             val.data.datas.reverse()
                             let data = val.data.datas.map(this.handleTabel)
-                            this.setState({...this.state, tabelData:data})  
+                            let dat = data.slice(0,10)
+                            this.setState({...this.state, tabelData:dat})  
                             
                             // get data to table Data | End ------
                         })
@@ -210,7 +211,15 @@ const GlobalProvider = (Children) => {
                 Axios.get(`http://tigasmos-stmkg.my.id:5000/api/${this.state.siteChart}`)
                         .then((val)=>{
                             let data = val.data.datas.map(this.handleArray)
-                            this.setState({...this.state, arrDataChart:data})                        
+                            let batasBawah = (val) =>{
+                                if(val<=25){
+                                    return 0
+                                }else{
+                                    return val-25
+                                }
+                            }
+                            let dat = data.slice(batasBawah(data.length),data.length)
+                            this.setState({...this.state, arrDataChart:dat})                        
                     })
                 Axios.get(`http://tigasmos-stmkg.my.id:5000/api/site-1`)
                     .then((val)=>{
@@ -230,7 +239,15 @@ const GlobalProvider = (Children) => {
                 Axios.get(`http://tigasmos-stmkg.my.id:5000/api/notif`)
                     .then((val)=>{
                         let data = val.data.datas
-                        this.setState({...this.state, notif:data})
+                        let batasBawah = (val) =>{
+                            if(val<=8){
+                                return 0
+                            }else{
+                                return val-8
+                            }
+                        }
+                        let dat = data.slice(batasBawah(data.length),data.length)
+                        this.setState({...this.state, notif:dat})
                     })
                 Axios.get('https://data.bmkg.go.id/gempadirasakan.xml')
                     .then((val)=>{
@@ -305,7 +322,15 @@ const GlobalProvider = (Children) => {
                     Axios.get(`http://tigasmos-stmkg.my.id:5000/api/${this.state.siteChart}`)
                         .then((val)=>{
                             let data = val.data.datas.map(this.handleArray)
-                            this.setState({...this.state, arrDataChart:data})                        
+                            let batasBawah = (val) =>{
+                                if(val<=25){
+                                    return 0
+                                }else{
+                                    return val-25
+                                }
+                            }
+                            let dat = data.slice(batasBawah(data.length),data.length)
+                            this.setState({...this.state, arrDataChart:dat})                        
                         })
                 }
                 if(prevState.siteTabel !== this.state.siteTabel ){
@@ -335,7 +360,8 @@ const GlobalProvider = (Children) => {
                             });
                             val.data.datas.reverse()
                             let data = val.data.datas.map(this.handleTabel)
-                            this.setState({...this.state, tabelData:data})                      
+                            let dat = data.slice(0,10)
+                            this.setState({...this.state, tabelData:dat})                      
                         })
                 }
             }
