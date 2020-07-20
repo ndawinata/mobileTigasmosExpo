@@ -26,6 +26,7 @@ const SplashScr = () => {
             </View>
             <View style={styles.container1}>
                 <Text style={styles.text}> Version 1.0.0 </Text>
+                <Text style={styles.text2}> 2020 </Text>
             </View>
         </ImageBackground>
     )
@@ -44,8 +45,11 @@ const styles = StyleSheet.create({
     },
     text:{
         fontFamily:'segoesc',
-        fontSize:24,
-        marginBottom:35
+        fontSize:24
+    },
+    text2:{
+        fontFamily:'segoesc',
+        fontSize:24
     },
     text1:{
         fontFamily:'montserratbold',

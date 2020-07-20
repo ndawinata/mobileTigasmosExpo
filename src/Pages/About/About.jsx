@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Dimensions, ImageBackground, ScrollView, StyleSheet, Text, View } from 'react-native';
 import SafeAreaView from 'react-native-safe-area-view';
-import { BGAbout, ILogo, IMask1, IMask2 } from '../../Assets';
+import { BGAbout, ILogo, IMask, IMask1, IMask2 } from '../../Assets';
 import artikel from '../../Assets/Article/Article.json';
 import { GlobalConsumer } from '../../Component/Context/Context';
 import montserratbold from '../../Assets/fonts/montserratbold.ttf';
@@ -36,26 +36,33 @@ class About extends Component {
             return (
                 <ImageBackground source={BGAbout} style={{flex:1, resizeMode:'cover', justifyContent:"center"}}>
                     <ScrollView showsVerticalScrollIndicator={false}>
-                            <SafeAreaView style={styles.container}>
-                                <View style={{marginTop:15, marginBottom:5}}>
-                                    <ILogo width={windowWidth*0.32} height={windowWidth*0.32} />
+                        <SafeAreaView style={styles.container}>
+                            <View style={{marginTop:15, marginBottom:5}}>
+                                <ILogo width={windowWidth*0.32} height={windowWidth*0.32} />
+                            </View>
+                            <Text style={{fontFamily:'montserratbold', fontSize:20, marginBottom:2}}>TIGASMOS</Text>
+                            <Text style={{fontFamily:'segoesc', fontSize:20, marginBottom:12}}>Version 1.0.0</Text>
+                            <Text style={{fontWeight:"bold", fontFamily:'montserratregular', fontSize:16}}>TIDE GAUGE
+                                MONITORING SYSTEM</Text>
+                            <Text style={{fontSize:12, marginHorizontal:15,marginTop:5, marginBottom:5, textAlign:"center"}}>{artikel.about}</Text>
+                            <Text style={{fontFamily:'segoesc', fontSize:16}}>Developed By :</Text>
+                            <ScrollView showsHorizontalScrollIndicator={false}>
+                                <View style={{flexDirection:'row', marginTop:5, justifyContent:'space-between'}}>
+                                    <View style={{marginLeft:10, marginTop:25, alignItems:'center'}}>
+                                        <IMask1 width={110} height={110} />
+                                        <Text style={{fontWeight:'bold', fontSize:13}}>Nanda Winata</Text>
+                                    </View>
+                                    <View style={{marginHorizontal:1, alignItems:'center'}}>
+                                        <IMask width={110} height={110} />
+                                        <Text style={{fontWeight:'bold', fontSize:13}}>Drs. Agus Tri Sutanto, M.T.</Text>
+                                    </View>
+                                    <View style={{marginRight:10, marginTop:25, alignItems:'center'}}>
+                                        <IMask2 width={110} height={110} />
+                                        <Text style={{fontWeight:'bold', fontSize:13}}>Hanif Cahyo</Text>
+                                    </View>
                                 </View>
-                                <Text style={{fontFamily:'montserratbold', fontSize:20, marginBottom:2}}>TIGASMOS</Text>
-                                <Text style={{fontFamily:'segoesc', fontSize:20, marginBottom:12}}>Version 1.0.0</Text>
-                                <Text style={{fontWeight:"bold", fontFamily:'montserratregular', fontSize:16}}>TIDE GAUGE MONITORING SYSTEM</Text>
-                                <Text style={{fontSize:12, margin:15, textAlign:"center"}} >{artikel.about}</Text>
-                                <Text style={{fontFamily:'segoesc', fontSize:16}}>Developed By :</Text>
-                                <View style={{flexDirection:'row', marginTop:15, justifyContent:'space-between'}}>
-                                <View style={{marginHorizontal:40, alignItems:'center'}}>
-                                    <IMask1 width={120} height={120}/>
-                                    <Text style={{fontWeight:'bold'}}>Nanda Winata</Text>
-                                </View>
-                                <View style={{marginHorizontal:40, alignItems:'center'}}>
-                                    <IMask2 width={120} height={120}/>
-                                    <Text style={{fontWeight:'bold'}}>Hanif Cahyo R</Text>
-                                </View>
-                                </View>
-                            </SafeAreaView>
+                            </ScrollView>
+                        </SafeAreaView>
                     </ScrollView>
                 </ImageBackground>
             )

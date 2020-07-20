@@ -1,5 +1,6 @@
 import ILLogo from './disaster.svg'
 import IMask1 from './Ava1.svg'
+import IMask from './ava.svg'
 import IMask2 from './Ava2.svg'
 import IRuller from './Ruller.svg'
 import ITsunami from './tsunami.svg'
@@ -8,6 +9,7 @@ import ILogo from './LogoTebal.svg'
 
 export {
     ILLogo,
+    IMask,
     IMask1,
     IMask2,
     IRuller,
